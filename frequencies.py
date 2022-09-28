@@ -1,7 +1,9 @@
 """Frequencies function."""
 """ENTER YOUR SOLUTION HERE!"""
-import collections
+from itertools import groupby
 def frequencies(items):
-    counter = collections.Counter(items)
-    return dict(counter)
+    items = [str(x) for x in items]
+    return {value: len(list(freq)) for value, freq in groupby(sorted(items))}
+    
+
 
